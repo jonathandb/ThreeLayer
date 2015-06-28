@@ -13,18 +13,18 @@ namespace ThreeLayerTest.Controllers
 		private IOrderService _service;
 
 		public OrderController(IOrderService service) {
-			//this.service = service;
+			//_service = service;
 		}
 		//or
-		public IOrderService Service {
+		public IOrderService GetService {
 			get 
 			{
 				if (_service == null) 
 				{
-					//service = ServiceFactory.createOrderService();
-					service = new PAOrderService ();
+					//_service = ServiceFactory.createOrderService();
+					_service = new PAOrderService ();
 				}
-				return service;
+				return _service;
 			}
 		}
 

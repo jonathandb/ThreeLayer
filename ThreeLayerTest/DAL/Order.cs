@@ -1,47 +1,59 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace ThreeLayerTest
+namespace ThreeLayerTest.DAL
 {
-	public abstract class Order
+	public class OrderDTO
+	{
+		public int ID {get; set;}
+		public string Name { get; set; }
+		public string Description { get; set; }
+		public DateTime CreationDate { get; set; }
+
+	}
+
+	public class WorkRequestDTO
+	{
+		public List<WorkResponseDTO> WorkResponses { get; set; }
+	}
+
+	public class WorkResponseDTO
 	{
 
-	    int ID {get; set;}
-	    string Name { get; set; }
-	    string Description { get; set; }
-	    DateTime DueDate { get; set; }
+	}
 
-		int UniqueSOAProperty { get; set; }
-		int UniquePAProperty { get; set; }
-
-//		public static Order FromSOAOrder(SOA_Order soa_Order) {
-//			return (Order)soa_Order;
-//		}
+//	public abstract class Order
+//	{
 //
-//		public static Order FromPAOrder(PA_Order pa_Order) {
-//			return (Order) pa_Order;
-//		}
-	}
-
-
-	public partial class SOA_Order : Order {
-
-		public int UniquePAProperty { get; set; }
-	}
-
-	public partial class PA_Order : Order {
-		public int UniqueSOAProperty { get; set; }
-	}
+//		int ID {get; set;}
+//		string Name { get; set; }
+//		string Description { get; set; }
+//		DateTime CreationDate { get; set; }
+//
+//		int UniqueSOAProperty { get; set; }
+//		int UniquePAProperty { get; set; }
+//	}
+//
+//
+//	public partial class SOA_Order : Order {
+//
+//		public int UniquePAProperty { get; set; }
+//	}
+//
+//	public partial class PA_Order : Order {
+//		public int UniqueSOAProperty { get; set; }
+//	}
 
 	//generated entity
 	public partial class SOA_Order  
 	{
 		public int ID {get; set;}
-		public string Name { get; set; }
+		public string OrderName { get; set; }
 		public string Description { get; set; }
-		public DateTime DueDate { get; set; }
+		public DateTime CreationDate { get; set; }
 		public string S95Id { get; set; }
 
-		public int UniqueSOAProperty { get; set; }
+//		public int UniqueSOAProperty { get; set; }
 		//...
 	}
 
@@ -51,10 +63,10 @@ namespace ThreeLayerTest
 		public int ID {get; set;}
 		public string Name { get; set; }
 		public string Description { get; set; }
-		public DateTime DueDate { get; set; }
+		public DateTime CreationDate { get; set; }
 		public string S95Id { get; set; }
 
-		public int UniquePAProperty { get; set; }
+//		public int UniquePAProperty { get; set; }
 	}
 }
 
